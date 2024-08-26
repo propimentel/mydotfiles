@@ -43,7 +43,8 @@ mm-aws() {
 mm-start() {
   clear
   eval $(op signin)
-  printf "Signin request done, continue? <enter> " user_input
+  export NPM_GITHUB_TOKEN=$(op item get "NPM Package" --fields label=notesPlain | sed -n 's/.*"\([^ ]*\).*/\1/p')
+  printf "op signin Ok? <enter> " user_input
   read -p "" user_input
   printf "\n"
 
