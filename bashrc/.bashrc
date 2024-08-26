@@ -8,6 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 
 alias lzg="lazygit"
 alias lzd="lazydocker"
+alias ls="exa --icons"
+alias ll="exa -l --icons"
 
 # --------------------
 #   Machine Metrics

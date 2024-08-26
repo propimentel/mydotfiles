@@ -12,6 +12,7 @@
 for_window [class="^.*"] border pixel 1
 for_window [class="Blueman-manager"] floating enable, move position center
 for_window [class="pavucontrol"] floating enable, move position center
+for_window [class="zoom"] floating enable, move position center
 
 set $mod Mod4
 # set $mod Mod1
@@ -78,7 +79,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
