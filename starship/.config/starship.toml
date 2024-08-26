@@ -19,11 +19,8 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:teal)\
 $docker_context\
-[](fg:blue bg:purple)\
-$time\
-[ ](fg:purple)\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'

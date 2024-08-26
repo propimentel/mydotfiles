@@ -10,13 +10,18 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 for_window [class="^.*"] border pixel 1
+for_window [class="Blueman-manager"] floating enable, move position center
+for_window [class="pavucontrol"] floating enable, move position center
 
 set $mod Mod4
 # set $mod Mod1
 
+# set monitors layout
+exec --no-startup-id xrandr --output DP-1 --primary --auto --output HDMI-1 --auto --left-of DP-1 --output eDP-1 --auto --below HDMI-1
+
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/wallpaper/dunes-sun.jpg
-exec --no-startup-id xrdb -merge ~/.Xresources
+# exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
 # kill any hanging polybar processes
@@ -63,6 +68,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym $mod+a exec pavucontrol
+bindsym $mod+b exec blueman-manager
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -114,7 +121,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
