@@ -1,0 +1,77 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[window]
+
+# Window dimensions
+dimensions = { columns = 142, lines = 40 }  # Default: columns = 0, lines = 0
+
+# Window startup position
+position = "None"  # Default: "None"
+
+# Padding
+padding = { x = 0, y = 0 }  # Default: x = 0, y = 0
+
+# Dynamic padding
+dynamic_padding = false  # Default: false
+
+# Window decorations
+decorations = "Full"  # Default: "Full"
+
+# Opacity
+opacity = 0.95  # Default: 1.0
+
+# Blur (macOS/KDE Wayland only)
+blur = false  # Default: false
+
+# Startup mode
+startup_mode = "Windowed"  # Default: "Windowed"
+
+# Window title
+title = "Alacritty"  # Default: "Alacritty"
+
+# Dynamic title
+dynamic_title = true  # Default: true
+
+# Window class (Linux/BSD only)
+class = { instance = "Alacritty", general = "Alacritty" }  # Default: instance = "Alacritty", general = "Alacritty"
+
+# Decorations theme variant
+decorations_theme_variant = "None"  # Default: "None"
+
+# Resize increments
+resize_increments = false  # Default: false
+
+
+[selection]
+
+# Characters that are used as separators for "semantic words" in Alacritty
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\\t"  # Default: ",│`|:\"' ()[]{}<>\\t"
+
+# When set to true, selected text will be copied to the primary clipboard
+save_to_clipboard = true  # Default: false
+
+[mouse]
+bindings = [
+  { mouse = "Right", mods = "Control", action = "Paste" },
+]
