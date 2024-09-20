@@ -57,9 +57,10 @@ mm-start() {
   mm-disc
   mm-conn
 
-  printf "Start docker? <enter> "
+  printf "Stop/Start docker? <enter> "
   read -p ""
   printf "\n"
+  mm-dk-stop
   mm-dk-start
 
   printf "\nDone!\n"
