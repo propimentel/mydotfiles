@@ -20,6 +20,12 @@ for_window [class="^.*"] border pixel 1
 for_window [class="Blueman-manager"] floating enable, move position center
 for_window [class="pavucontrol"] floating enable, move position center
 for_window [class="zoom"] floating enable, move position center
+for_window [class="org.gnome.Nautilus"] floating enable, move position center
+for_window [class="org.gnome.Nautilus"] floating enable, move position center
+for_window [class="Mousepad"] floating enable, move position center
+for_window [class="Bitwarden"] floating enable, move position center
+for_window [class="1Password"] floating enable, move position center
+for_window [class="Postman"] floating enable, move position center
 
 set $mod Mod4
 
@@ -31,11 +37,9 @@ exec --no-startup-id feh --bg-scale ~/wallpaper/dunes-sun.jpg
 exec --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id setxkbmap -option ctrl:nocap 
 
-# exec_always killall polybar
-# exec_always MONITOR=eDP-1 polybar & 
-# exec_always MONITOR=HDMI-2 polybar &
-exec_always MONITOR=DP-1 polybar &
-exec_always MONITOR=HDMI-2 polybar &
+exec_always killall polybar
+exec_always sleep 2 && MONITOR=DP-1 polybar &
+exec_always sleep 2 && MONITOR=HDMI-2 polybar &
 
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec flameshot screen -n 2 -p /home/propimentel/Pictures/
