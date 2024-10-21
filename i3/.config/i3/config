@@ -35,10 +35,10 @@ exec_always --no-startup-id setxkbmap -layout us -variant intl
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/wallpaper/dunes-sun.jpg
 exec --no-startup-id xrdb -merge ~/.Xresources
-# exec_always --no-startup-id setxkbmap -option ctrl:nocap 
+exec_always --no-startup-id setxkbmap -option ctrl:nocap 
 
 exec_always killall polybar
-exec_always sleep 2 && MONITOR=DP-1 polybar &
+exec_always sleep 1 && MONITOR=DP-1 polybar &
 exec_always sleep 2 && MONITOR=HDMI-2 polybar &
 
 bindsym Print exec flameshot gui

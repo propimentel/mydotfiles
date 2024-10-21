@@ -6,6 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export PATH=$PATH:/opt/google-cloud-cli/bin
+
 alias lzg="lazygit"
 alias lzd="lazydocker"
 alias ls="exa --icons"
