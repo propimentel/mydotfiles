@@ -26,11 +26,12 @@ for_window [class="Mousepad"] floating enable, move position center
 for_window [class="Bitwarden"] floating enable, move position center
 for_window [class="1Password"] floating enable, move position center
 for_window [class="Postman"] floating enable, move position center
+for_window [class="vlc"] floating enable, move position center
+for_window [class="zoom"] floating enable, move position center
 
 set $mod Mod4
 
 exec_always --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --output DP-1 --primary --mode 1920x1080 --pos 1920x0 --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --rate 50 --pos 0x0
-exec_always --no-startup-id setxkbmap -layout us -variant intl
 
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/wallpaper/dunes-sun.jpg

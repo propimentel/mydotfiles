@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -74,4 +71,9 @@ save_to_clipboard = true  # Default: false
 [mouse]
 bindings = [
   { mouse = "Right", mods = "Control", action = "Paste" },
+]
+
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]

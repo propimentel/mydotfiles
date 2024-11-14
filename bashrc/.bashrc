@@ -13,6 +13,38 @@ alias lzd="lazydocker"
 alias ls="exa --icons"
 alias ll="exa -l --icons"
 
+eval "$(zoxide init bash)"
+
+setkb-us-intl() {
+  setxkbmap -layout us -variant intl
+}
+
+sysupdates() {
+  clear
+  echo -e "Checking updates...\n"
+
+  official_updates=$(checkupdates | wc -l)
+  echo "$official_updates Official update(s)."
+
+  aur_updates=$(yay -Qua | wc -l)
+  echo "$aur_updates AUR update(s)."
+
+  if [ "$official_updates" -gt 0 ]; then
+    echo
+    read -r -p "Continue with pacman? <enter>" 
+    sudo pacman -Syu --noconfirm 
+  fi
+
+
+  if [ "$aur_updates" -gt 0 ]; then
+    echo
+    read -r -p "Continue with the yay update? <enter>" 
+    yay -Syu --aur --noconfirm
+  fi
+
+  echo -e "\nAll done!"
+}
+
 # --------------------
 #   Machine Metrics
 # --------------------
@@ -46,8 +78,8 @@ mm-start() {
   clear
   eval $(op signin)
   export NPM_GITHUB_TOKEN=$(op item get "NPM Package" --fields label=notesPlain | sed -n 's/.*"\([^ ]*\).*/\1/p')
-  printf "op signin Ok? <enter> " user_input
-  read -p "" user_input
+  printf "op signin Ok? <enter> " 
+  read -p "" 
   printf "\n"
 
   mm-aws
