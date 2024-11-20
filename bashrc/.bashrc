@@ -54,8 +54,12 @@ source $HOME/Code/dev-tools/mm_profile
 mm-conn() {
   openvpn3 session-start --config ~/profile-173-2.ovpn
 
-  printf "\nWeb login requested, accept it then <enter>.\n" 
-  read -p "" 
+  sleep 1
+  echo
+  read -r -p "Web approved? <enter>" 
+  sleep 1
+
+  openvpn3 sessions-list
 }
 
 mm-disc() {
