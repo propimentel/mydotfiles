@@ -15,7 +15,7 @@ alias ll="exa -l --icons"
 
 eval "$(zoxide init bash)"
 
-setkb-us-intl() {
+setkb() {
   setxkbmap -layout us -variant intl
 }
 
@@ -95,13 +95,14 @@ mm-start() {
   mm-disc
   mm-conn
 
-  printf "Stop/Start docker? <enter> "
-  read -p ""
-  printf "\n"
+  echo
+  read -r -p "Stop/Start docker? <enter>" 
+  echo
+
   mm-dk-stop
   mm-dk-start
 
-  printf "\nDone!\n"
+  echo -e "\nDone!\n"
 }
 
 mm-dk-start() {
