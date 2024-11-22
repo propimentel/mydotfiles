@@ -57,7 +57,7 @@ mm-conn() {
   sleep 1
   echo
   read -r -p "Web approved? <enter>" 
-  sleep 1
+  sleep 3
 
   openvpn3 sessions-list
 }
