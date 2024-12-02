@@ -33,14 +33,16 @@ set $mod Mod4
 
 exec_always --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --output DP-1 --primary --mode 1920x1080 --pos 1920x0 --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --rate 50 --pos 0x0
 
+exec_always --no-startup-id setxkbmap -option ctrl:nocap 
+exec_always --no-startup-id setxkbmap -layout us -variant intl
+
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/wallpaper/dunes-sun.jpg
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id setxkbmap -option ctrl:nocap 
 
 exec_always killall polybar
-exec_always sleep 1 && MONITOR=DP-1 polybar &
-exec_always sleep 2 && MONITOR=HDMI-2 polybar &
+exec_always sleep 2 && MONITOR=DP-1 polybar &
+exec_always sleep 3 && MONITOR=HDMI-2 polybar &
 
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec flameshot screen -n 2 -p /home/propimentel/Pictures/
