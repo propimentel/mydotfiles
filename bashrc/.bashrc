@@ -29,17 +29,10 @@ sysupdates() {
   aur_updates=$(yay -Qua | wc -l)
   echo "$aur_updates AUR update(s)."
 
-  if [ "$official_updates" -gt 0 ]; then
-    echo
-    read -r -p "Continue with pacman? <enter>" 
-    sudo pacman -Syu --noconfirm 
-  fi
-
-
-  if [ "$aur_updates" -gt 0 ]; then
+  if [ "$official_updates" -gt 0 ] || [ "$aur_updates" -gt 0 ]; then
     echo
     read -r -p "Continue with the yay update? <enter>" 
-    yay -Syu --aur --noconfirm
+    yay --noconfirm
   fi
 
   echo -e "\nAll done!"
