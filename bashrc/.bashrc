@@ -19,6 +19,14 @@ setkb() {
   setxkbmap -layout us -variant intl
 }
 
+wifi-list() {
+  nmcli device wifi list
+}
+
+wifi-connect() {
+  nmcli device wifi connect "SSID" password "PSWD"
+}
+
 sysupdates() {
   clear
   echo -e "Checking updates...\n"
